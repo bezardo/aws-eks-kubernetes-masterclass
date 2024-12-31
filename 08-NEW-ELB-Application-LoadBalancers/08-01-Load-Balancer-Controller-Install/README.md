@@ -41,7 +41,7 @@ eksctl create cluster --name=eksdemo1 \
 # Get List of clusters (Section-01-02)
 eksctl get cluster   
 
-# Template (Section-01-02)
+# In order for our k8s service account to use IAM policies and perform actions with other aws service we require OIDC provider
 eksctl utils associate-iam-oidc-provider \
     --region region-code \
     --cluster <cluter-name> \
