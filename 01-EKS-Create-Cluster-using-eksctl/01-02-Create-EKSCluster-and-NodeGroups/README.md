@@ -19,7 +19,16 @@
 eksctl create cluster --name=eksdemo1 \
                       --region=us-east-1 \
                       --zones=us-east-1a,us-east-1b \
-                      --without-nodegroup 
+                      --without-nodegroup
+
+eksctl create cluster \
+  --name eksdemo1 \
+  --region us-east-1 \
+  --zones us-east-1a,us-east-1b \
+  --without-nodegroup \
+  --vpc-private-subnets=subnet-abc123,subnet-def456 \
+  --vpc-public-subnets=subnet-ghi789,subnet-jkl000 \
+  --api-access public,private
 
 # Get List of clusters
 eksctl get cluster                  
